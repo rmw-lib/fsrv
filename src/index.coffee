@@ -44,7 +44,7 @@ export class Fsrv
           r.push packUInt(size-split)
 
       r =  [
-        Buffer.from([flag])
+        Buffer.from([flag, url+"\n"])
         packUInt(offset,4)
       ].concat r
 
@@ -64,3 +64,4 @@ export class Fsrv
 
 export default (map)=>
   new Fsrv map
+
