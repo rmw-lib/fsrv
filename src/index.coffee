@@ -44,7 +44,7 @@ export class Fsrv
           r.push packUInt(size-split)
 
       r =  [
-        Buffer.from([flag, url+"\n"])
+        Buffer.from([flag, filepath+"\n"])
         packUInt(offset,4)
       ].concat r
 
