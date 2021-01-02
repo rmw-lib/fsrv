@@ -46,7 +46,7 @@ export class Fsrv
       r =  [
         Buffer.from [flag]
         Buffer.from filepath+"\n"
-        packUInt(offset,4)
+        packUInt(offset)
       ].concat r
 
       buf = Buffer.allocUnsafe(len)
