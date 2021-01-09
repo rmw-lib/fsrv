@@ -43,18 +43,12 @@ export class Fsrv
         if offset == 0
           r.push packUInt(size-split)
 
-      r =  [
-        Buffer.from [flag]
-        Buffer.from filepath+"\n"
-        packUInt(offset)
-      ].concat r
-
       buf = Buffer.allocUnsafe(len)
       await fd.read(buf, 0, len, offset)
 
       r.push buf
 
-      return Buffer.concat r
+      return [flag, Buffer.concat r]
     catch err
       console.error err
       return ''
