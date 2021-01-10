@@ -57,6 +57,6 @@ export class Fsrv
         fd.close()
 
 
-export default (map)=>
-  new Fsrv map
+export default ->
+  new Fsrv ...arguments
 
