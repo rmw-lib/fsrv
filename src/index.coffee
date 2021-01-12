@@ -14,6 +14,7 @@ export class Fsrv
   constructor:(@root, @split=MB, max=2048)->
     @cache = new LRU({
       max
+      maxAge:60000
       dispose:(key, fd)=>
         fd.close()
     })
